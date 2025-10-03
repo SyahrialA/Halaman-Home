@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #b6895b;
-  --bg: #bb8c2c;
+  --primary-color: #d4a23e;
+  --bg: #482d20;
 }
 
 * {
@@ -16,7 +16,7 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--bg);
   color: #fff;
-  /* min-height: 2000px; */
+  min-height: 2000px;
 }
 
 /* Navbar */
@@ -56,6 +56,13 @@ body {
   color: var(--primary-color);
 }
 
+/* Saat hamburger aktif (navbar-nav.active), hover warna berbeda */
+@media (max-width: 768px) {
+  .navbar .navbar-nav.active a:hover {
+    color: var(--bg);
+  }
+}
+
 .navbar .navbar-nav a::after {
   content: '';
   display: block;
@@ -63,6 +70,12 @@ body {
   border-bottom: 0.1rem solid var(--primary-color);
   transform: scaleX(0);
   transition: 0.3s linear;
+}
+/* Saat hamburger aktif, underline hover warna berbeda */
+@media (max-width: 768px) {
+  .navbar .navbar-nav.active a:hover::after {
+    border-bottom-color: var(--bg);
+  }
 }
 
 .navbar .navbar-nav a:hover::after {
@@ -87,7 +100,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url('../img/background.jpg');
+  background-image: url('../img/bagroundv.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -102,7 +115,7 @@ body {
   width: 100%;
   height: 100%;
 
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgba(187, 140, 44, 1) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(72, 45, 32, 1) 100%);
 }
 
 .hero .content {
@@ -121,9 +134,27 @@ body {
   font-size: 1.5rem;
   margin-top: 1rem;
   line-height: 1.4;
-  font-weight: 100;
-  text-shadow: 1px 1px 5px rgba(3, 3, 1, 0.5);
+  font-weight: 300;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(72, 45, 32, 0.7);
 }
+
+/* About Section */
+
+.about {
+  padding: 8rem 7% 1.4rem;
+}
+
+.about h2 {
+  font-size: 2.6rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about h2 span {
+  color: var(--primary-color);
+}
+
 /* Media Queriy */
 
 /* Laptop */
@@ -147,7 +178,7 @@ body {
     position: absolute;
     top: 100%;
     right: -100%;
-    background-color: #291104e7;
+    background-color: #9c772e;
     width: 30rem;
     height: 100vh;
     transition: 0.5s;
